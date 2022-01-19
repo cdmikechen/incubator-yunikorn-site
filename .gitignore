@@ -10,4 +10,3 @@ yarn.lock
 _site/
 .docusaurus/
 node_modules/
-build/
