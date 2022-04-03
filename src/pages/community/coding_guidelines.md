@@ -93,8 +93,8 @@ See the golangci-lint product documentation for more options and information on 
 
 ### Configuration
 A predefined configuration is provided for the two projects that use them:
-* [YuniKorn k8shim](https://github.com/apache/incubator-yunikorn-k8shim), configuration file [golangci.yml](https://github.com/apache/incubator-yunikorn-k8shim/blob/master/.golangci.yml).
-* [YuniKorn core](https://github.com/apache/incubator-yunikorn-core), configuration file [golangci.yml](https://github.com/apache/incubator-yunikorn-core/blob/master/.golangci.yml). 
+* [YuniKorn k8shim](https://github.com/apache/yunikorn-k8shim), configuration file [golangci.yml](https://github.com/apache/yunikorn-k8shim/blob/master/.golangci.yml).
+* [YuniKorn core](https://github.com/apache/yunikorn-core), configuration file [golangci.yml](https://github.com/apache/yunikorn-core/blob/master/.golangci.yml). 
 
 The web interface is a javascript project and the scheduler interface only has generated Go code and thus do not use it. 
 
@@ -123,11 +123,11 @@ To extend the coverage further and help mark issues proactively check the follow
 Open the preferences pane and go to: Editor -> Code Style -> Go.
 There are three tabs to configure, the first two are crucial to comply with the basic rules from `gofmt` and `goimports`:
 
-| ||
-| -------- | ---------- |
-| Tabs |![tabs](/img/goland_ide_pref_tabs.png)|
-| Imports |![imports](/img/goland_ide_pref_imports.png)|
-| Other |![other](/img/goland_ide_pref_other.png)|
+|         |                                              |
+|---------|----------------------------------------------|
+| Tabs    | ![tabs](/img/goland_ide_pref_tabs.png)       |
+| Imports | ![imports](/img/goland_ide_pref_imports.png) |
+| Other   | ![other](/img/goland_ide_pref_other.png)     |
 
 The imports as configured above should create 3 groups of imports in a file when they are used:
 1. standard library imports

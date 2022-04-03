@@ -17,13 +17,25 @@
 const versions = require('./versions.json');
 
 module.exports = {
-  title: 'Apache YuniKorn (Incubating)',
+  title: 'Apache YuniKorn',
   tagline: 'Unleash the power of resource scheduling for running Big Data & ML on Kubernetes!',
   url: 'https://yunikorn.apache.org',
   baseUrl: '/',
   favicon: 'img/yunikorn.ico',
   organizationName: 'apache',
-  projectName: 'incubator-yunikorn-core',
+  projectName: 'yunikorn-core',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-cn'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      "zh-cn": {
+        label: '中文',
+      },
+    },
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -46,7 +58,7 @@ module.exports = {
     announcementBar: {
       id: 'new_release',
       content:
-          '0.12.1 has been released, check the DOWNLOADS',
+          '0.12.2 has been released, check the DOWNLOADS',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
     },
@@ -91,12 +103,20 @@ module.exports = {
               label: 'Reporting Issues',
             },
             {
+              to: 'community/release_procedure',
+              label: 'Release Procedure',
+            },
+            {
               to: 'community/events',
               label: 'Events',
             },
             {
               to: 'community/people',
               label: 'People',
+            },
+            {
+              to: 'community/maturity',
+              label: 'Incubation Maturity Assessment',
             },
           ]
         },
@@ -106,10 +126,6 @@ module.exports = {
             {
               label: 'Apache Software Foundation',
               href: 'https://www.apache.org/'
-            },
-            {
-              label: 'Apache Incubator',
-              href: 'https://incubator.apache.org/'
             },
             {
               label: 'Events',
@@ -156,7 +172,11 @@ module.exports = {
           ],
         },
         {
-          href: 'https://github.com/apache/incubator-yunikorn-core',
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/apache/yunikorn-core',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
@@ -174,29 +194,33 @@ module.exports = {
               href: 'https://blog.cloudera.com/yunikorn-a-universal-resources-scheduler/'
             },
             {
-              label: 'What\'s new in YuniKorn 0.8.0?',
-              href: 'https://blog.cloudera.com/apache-yunikorn-incubating-0-8-release-whats-new-and-upcoming/'
+              label: 'Spark on Kubernetes – Gang Scheduling with YuniKorn',
+              href: 'https://blog.cloudera.com/spark-on-kubernetes-gang-scheduling-with-yunikorn/'
             }
           ]
         },
         {
-          title: 'Github',
+          title: 'Code Repositories',
           items: [
             {
-              label: 'scheduler-core',
-              href: 'https://github.com/apache/incubator-yunikorn-core/'
+              label: 'Core scheduler',
+              href: 'https://github.com/apache/yunikorn-core/'
             },
             {
-              label: 'kubernetes-shim',
-              href: 'https://github.com/apache/incubator-yunikorn-k8shim'
+              label: 'Kubernetes shim',
+              href: 'https://github.com/apache/yunikorn-k8shim'
             },
             {
-              label: 'scheduler-interface',
-              href: 'https://github.com/apache/incubator-yunikorn-scheduler-interface'
+              label: 'Scheduler Interface',
+              href: 'https://github.com/apache/yunikorn-scheduler-interface'
             },
             {
-              label: 'scheduler-web',
-              href: 'https://github.com/apache/incubator-yunikorn-web'
+              label: 'WEB application',
+              href: 'https://github.com/apache/yunikorn-web'
+            },
+            {
+              label: 'Website',
+              href: 'https://github.com/apache/yunikorn-site'
             }
           ]
         },
@@ -208,8 +232,8 @@ module.exports = {
               to: 'community/get_involved'
             },
             {
-              label: 'Roster',
-              href: 'https://people.apache.org/phonebook.html?podling=yunikorn'
+              label: 'People',
+              href: 'community/people'
             },
             {
               label: 'Issues',
@@ -218,23 +242,17 @@ module.exports = {
           ]
         },
       ],
-      logo: {
-        alt: 'Apache Incubator Logo',
-        src: 'https://incubator.apache.org/images/incubator_feather_egg_logo.png',
-        href: 'https://incubator.apache.org/',
-      },
       copyright: `
 <div style="font-size: 70%">
 Copyright © 2020-${new Date().getFullYear()} <a href="https://www.apache.org/">The Apache Software Foundation</a>. Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>. <br>
 <div style="padding:20px; margin: 10px; color: #4d4d4d;">
-<p>Apache YuniKorn is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
-
-<p>The Apache Software Foundation Apache YuniKorn, YuniKorn, Apache, the Apache feather, and the Apache YuniKorn project logo are either registered trademarks or trademarks of the Apache Software Foundation.  Apache YuniKorn is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the name of Apache TLP sponsor.</p>
+<p>The Apache Software Foundation Apache YuniKorn, YuniKorn, Apache, the Apache feather, and the Apache YuniKorn project logo are either registered trademarks or trademarks of the Apache Software Foundation.</p>
 </div>
 </div>`
     },
     algolia: {
-      apiKey: '65b6e69046d08b5364868a53ff974c2f',
+      appId: 'Q1V951BG2V',
+      apiKey: '9ae3e2f7a01a21300490729dfb9f2a51',
       indexName: 'yunikorn',
       contextualSearch: true,
     },

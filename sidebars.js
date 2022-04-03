@@ -21,6 +21,7 @@ module.exports = {
             'get_started/core_features'
         ],
         'User Guide': [
+            'user_guide/deployment_modes',
             'user_guide/queue_config',
             'user_guide/placement_rules',
             'user_guide/usergroup_resolution',            
@@ -51,6 +52,7 @@ module.exports = {
         'Developer Guide': [
             'developer_guide/env_setup',
             'developer_guide/build',
+            'developer_guide/dependencies',
             'developer_guide/deployment',
             'developer_guide/openshift_development',
             {
@@ -69,7 +71,8 @@ module.exports = {
                     'design/scheduler_configuration',
                     'design/state_aware_scheduling',
                     'design/scheduler_object_states',
-                    'design/gang_scheduling'
+                    'design/gang_scheduling',
+                    'design/scheduler_plugin',
                 ]
             },
         ],

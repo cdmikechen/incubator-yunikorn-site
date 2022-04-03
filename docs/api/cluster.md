@@ -24,7 +24,7 @@ under the License.
 
 ## Clusters
 
-Returns general information about the clusters managed by the YuniKorn Scheduler. Information includes number of (total, failed, pending, running, completed) applications and containers.  
+Returns general information about the clusters managed by the YuniKorn Scheduler. Information includes number of (total, failed, pending, running, completed) applications and containers and the build information of resource managers.  
 
 **URL** : `/ws/v1/clusters`
 
@@ -38,12 +38,21 @@ Returns general information about the clusters managed by the YuniKorn Scheduler
 
 **Content examples**
 
-As an example, here is a response from a 2-node cluster with 3 applications and 4 running containers.
+As an example, here is a response from a 2-node cluster with 3 applications and 4 running containers and 1 resource manager.
 
 ```json
 [
     {
-        "partition": "[rm-123]default",
+        "startTime": "2022-02-21T11:12:05+0000",
+        "rmBuildInformation": [
+            {
+                "buildDate": "2022-02-21T19:09:16+0800",
+                "buildVersion": "latest",
+                "isPluginVersion": "false",
+                "rmId": "rm-123"
+            }
+        ],
+        "partition": "default",
         "clusterName": "kubernetes",
         "totalApplications": "3",
         "failedApplications": "1",
@@ -79,6 +88,8 @@ As an example, here is a response from a 2-node cluster with 3 applications and 
 
 Returns statistical data related the cluster resource utilization
 
+**Status** : Deprecated since v0.12.2, replaced by [Partitions](scheduler.md#partitions)
+
 **URL** : `/ws/v1/clusters/utilization`
 
 **Method** : `GET`
@@ -94,13 +105,13 @@ Returns statistical data related the cluster resource utilization
 ```json
 [
     {
-        "partition": "[mycluster]default",
+        "partition": "default",
         "utilization": [
             {
                 "type": "memory",
-                "total": 5076,
-                "used": 1500,
-                "usage": "29%"
+                "total": 6442450944,
+                "used": 1648361472,
+                "usage": "26%"
             },
             {
                 "type": "vcore",
