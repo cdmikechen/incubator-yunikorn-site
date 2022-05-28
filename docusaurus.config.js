@@ -58,7 +58,7 @@ module.exports = {
     announcementBar: {
       id: 'new_release',
       content:
-          '0.12.2 has been released, check the DOWNLOADS',
+          '1.0.0 has been released, check the DOWNLOADS',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
     },
@@ -142,6 +142,10 @@ module.exports = {
             {
               label: 'Sponsorship',
               href: 'https://www.apache.org/foundation/sponsorship.html'
+            },
+            {
+              label: 'Privacy Policy',
+              href: 'https://privacy.apache.org/policies/privacy-policy-public.html'
             },
             {
               label: 'Security',
